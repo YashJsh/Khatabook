@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="Outer w-full h-screen">
+        <nav class = "bg-blue text-black h-[10vh] flex justify-end items-center bg-[#414A45] font-semibold px-[10vw]">
+            <h3 class = "text-lg font-medium text-[#F0EFE0] "><a href="/">KHATABOOK</a></h3>
+        </nav>
+        <div class = "h-screen w-full bg-[#F0EFE0]">
+            <div class =  "min-h-[50vh] flex justify-center py-[2vh]">
+                <form action="/create" method="post" class = "">
+                    <input type="text" placeholder = "FileName" name = "title" class = "rounded px-4 border-[#414A45] border-[1px]"><br>
+                    <textarea name="text" id="" class = "w-[90vw] h-[40vh] min-h-[10vh] px-4 py-[1vh] my-[1vh] rounded border-[#414A45] border-[1px]" placeholder = "You can write here"><%= data%></textarea><br>
+                    <div class = " flex justify-end w-[90vw]">   
+                        <button name="save" type="submit" class = "h-[5vh] w-[7vw] bg-[#414A45] text-white rounded-xl ">Submit</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

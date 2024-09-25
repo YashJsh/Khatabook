@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="Outer w-full h-screen">
+        <nav class = "bg-blue text-black h-[10vh] flex justify-between items-center bg-[#414A45] font-semibold px-[10vw]">
+            <h3 class = "text-lg font-medium text-[#F0EFE0] "><a href="/">KHATABOOK</a></h3>
+            <div class="flex justify-between items-center gap-4">
+                <h3 class = "text-base font-medium text-[#414A45] bg-[#F0EFE0] border-[#F0EFE0] border-[1px] p-[0.5vh] rounded-xl"><a href="/">HOME</h3> 
+                <h3 class = "text-base font-medium text-[#414A45] bg-[#F0EFE0] border-[#F0EFE0] border-[1px] p-[0.5vh] rounded-xl"><a href="/">CREATE</a></h3>
+
+            </div>    
+        </nav>
+        <div class = "h-screen w-full bg-[#F0EFE0]">
+            <div class =  "min-h-[50vh] flex justify-center py-[2vh]">
+                <form action="/view/<%= filename %>"  class = "flex flex-col items-center justify-center">
+                    <div class = "flex items-center">
+                        <h2 class = "text-xl mb-[1vh] px-[1rem] bg-white border-[#414A45] border-[1px] rounded-xl" >File : <%= filename.split(".")[0]%>  </h2>
+                    </div>
+                    <h3 name="text" id="" class = "w-[90vw] h-[40vh] min-h-[10vh] px-[2vw] py-[1vh] rounded-xl border-[#414A45] border-[1px] bg-white "><%= data%></h3><br>
+                    <button class = "bg-[#414A45] text-[#F0EFE0] h-[5vh] w-[7vw] rounded-xl"><a href="/edit/<%= filename %>">EDIT</a></button>
+                    <button class = "bg-[#414A45] text-[#F0EFE0] h-[5vh] w-[7vw] rounded-xl mt-[1rem]"><a href="/delete/<%= filename %>">DELETE</a></button>
+                </form>
+            </div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="Outer w-[100vw] h-[100vh]">
+        <nav class = "bg-blue text-black h-[10vh] flex justify-between items-center bg-[#414A45] font-semibold px-[10vw]">
+            <h3 class = "text-lg font-medium text-[#F0EFE0] "><a href="/">KHATABOOK</a></h3>
+            <h4 class = "bg-[#F0EFE0] h-[4vh] w-[6vw] rounded-xl flex justify-center items-center "><a href="/create">CREATE</a></h4>
+        </nav>
+        <div class= "bg-[#F0EFE0] h-[90vh]  ">
+            <div class = "  p-[2vw] flex justify-center items-center">
+                <ul class="inline w-full">
+                <% if (files.length <= 0){%>
+                    <div class =  "w-screen flex justify-center text-center">
+                        <h2 class = "font-semibold text-2xl ml-5">Currenty No files exists in the directory!!</h3>
+                    </div>    
+                    <%  }%>
+                    
+                    <% files.forEach(function(file){ %>
+                    <li class="flex justify-between items-center w-full my-2 border-b-2 border-b-[#414A45] ">
+                        <h3 class="flex-1 mx-[6vw]"><%= file.split(".")[0] %>
+                        </h3>
+                        <div class="flex space-x-2 mx-[6vw] mb-3">
+                            <button class="h-[5vh] w-[4vw] bg-[#414A45] text-white rounded-xl ">
+                                <a href="/view/<%= file %>">View</a>
+                            </button> 
+                            <button class="h-[5vh] w-[4vw] bg-[#414A45] text-white rounded-xl ">
+                                <a href="/edit/<%= file %>">Edit</a>
+                            </button>
+                            <button class="h-[5vh] w-[7vw] bg-[#414A45] text-white rounded-xl">
+                                <a href="/delete/<%= file %>">Delete</a>
+                            </button>
+                            <% }) %>
+                        </li>
+                    </ul>  
+            </div>
+        </div>
+    </div> 
+  </body>
+</html>
+
